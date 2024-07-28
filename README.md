@@ -2,7 +2,7 @@
 
 ### Setup:
 
-- run `https://github.com/UMD-Mehdiyev/MonkeyClip.git` to copy down the project
+- run `git clone https://github.com/UMD-Mehdiyev/MonkeyClip.git` to copy down the project
 
 - navigate into the directory
 
