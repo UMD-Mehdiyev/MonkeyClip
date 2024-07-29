@@ -1,7 +1,13 @@
-from util import gemini
+from util import helpers
+import uuid
+import os
 
-def run():
-    print("Initializing MonkeyClip...")
-    model = gemini.create_model()
-    response = model.generate_content("Write a story about an AI and magic")
-    print(response.text)
+
+def generate_videos(videos):
+    for type in videos:
+        response = helpers.generate_story(type)
+        helpers.generate_speech(response.text)
+        helpers.generate_srt()
+        helpers.generate_video(f'output/{type.value.replace(' ', '_')}_{uuid.uuid1()}')            
+        os.remove('audio.mp3')
+        os.remove('subtitles.srt')
